@@ -59,6 +59,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 <br/>
 
+# Comments
+
 ![alt text](comment.png)
 
 # Creating new recipe
