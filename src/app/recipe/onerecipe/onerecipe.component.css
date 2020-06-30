@@ -1,0 +1,25 @@
+li{
+    font-size: 160%;
+    font-weight: 400;
+}
+.ingg{
+    line-height: 180%;
+    font-size: 120%;
+    font-weight: 200;
+}
+.dirr{
+    font-size: 120%;
+    line-height: 150%;
+}
+.username{
+    font-size: 70%;
+    font-style: italic;
+    color: brown;
+    font-weight: 500;
+}
+.comment{
+    font-size: 130%;
+    color: black;
+    font-weight: 300;
+    font-family: 'Courier New', Courier, monospace;
+}

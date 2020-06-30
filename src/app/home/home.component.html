@@ -1,0 +1,40 @@
+
+<div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+        <h1 class="display-4">Our Recipes Make Your Life Better!</h1>
+        <p class="lead">In your home page you see the recipes according to the categories
+            you follow.
+        </p>
+        <p class="lead">Personalize your home page!</p>
+
+        <button *ngFor="let category of categories" type="button" class="btn btn-info btn-lg mr-2"
+            (click)="followOrUnCategory(category)">
+            <i class="fas fa-heart" [class.selected]="askToComponent(category.id)"></i>
+            <span class="categories">{{category.categoryName}}</span></button>
+
+    </header>
+
+    <!-- Page Features -->
+    <div class="row text-center">
+
+        <div *ngFor="let recipe of followedRecipes" class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" [src]="recipe.picUrl" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">{{recipe.name}}</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
+                        necessitatibus neque.</p>
+                </div>
+                <div class="card-footer">
+                    <a (click)="goToRecipe(recipe)" class="btn btn-info">See The Recipe</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->

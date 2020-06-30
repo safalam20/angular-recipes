@@ -1,0 +1,20 @@
+<header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="flex-grow-1">
+            <a routerLink="/">
+                <i class="fas fa-pepper-hot fa-4x">
+                    <span class="reddit-text">
+                        All the Recipes
+                    </span>
+                </i>
+                
+            </a>
+        </div>
+        <div class="flex-grow-1 float-right">
+            <a *ngIf="!isLoggedIn" routerLink="/signup" class="float-right signup mr-2">Sign up</a>
+            <a *ngIf="!isLoggedIn"routerLink="/login" class="float-right login mr-2">Login</a>
+            <button *ngIf="isLoggedIn" type="button" class="btn btn-primary float-right login mr-2 " (click)="logout()">Logout</button>
+            <a *ngIf="isLoggedIn" routerLink="/create-recipe" class="float-right create-recipe">Create Recipe</a>
+        </div>
+    </nav>
+</header>

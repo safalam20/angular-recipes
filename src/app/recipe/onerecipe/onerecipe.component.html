@@ -1,0 +1,78 @@
+<!-- Page Content -->
+<div class="container">
+    <br>
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4">{{recipe.name}}</h1>
+
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+
+        <div class="col-md-6">
+            <img class="img-fluid" [src]="recipe.picUrl" alt="">
+        </div>
+
+        <div class="col-md-6">
+            <ul>
+                <li>Calories : {{recipe.calories}}</li>
+                <li>Cook Time : {{recipe.cookTime}}</li>
+                <li>Servings : {{recipe.servings}}</li>
+                <li>Prep Time : {{recipe.prepTime}}</li>
+            </ul>
+            <br>
+            <h2>Ingredients</h2>
+            <p class="ingg">{{recipe.ingredients}}</p>
+        </div>
+
+    </div>
+    <!-- /.row -->
+    <br>
+    <br>
+    <div class="row">
+
+        <div class="col-md-9 mt-3">
+            <h2>Steps</h2>
+            <br>
+            <ul>
+                <li *ngFor="let step of steps">{{step}}</li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <h4>Comments</h4>
+    <hr>
+
+
+    <div *ngIf="isCommentsEmpty">
+
+        <div *ngFor="let com of comments">
+            <p class="comment">{{com.content}} <span class="username">
+                    ...by {{com.username}} at {{com.createdAt | date:'fullDate'}}</span></p>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+
+
+    <div class="row">
+        <div class="col-8">
+            <div class="form-group">
+                <label for="comment">Send Comment</label>
+                <textarea class="form-control" rows="3" id="comment" name="comment"
+                    [(ngModel)]="commentToPost.content"></textarea>
+            </div>
+            <button (click)="createComment()" type="submit" class="btn btn-success btn-lg">Send</button>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
+<!-- /.container -->
